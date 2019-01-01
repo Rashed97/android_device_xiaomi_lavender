@@ -732,8 +732,9 @@ service vendor.sensors /vendor/bin/sscrpcd
 
 service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
-    user root
-    group root system input
+    user system
+    group system
+    capabilities NET_BIND_SERVICE
     writepid /dev/cpuset/system-background/tasks
 
 on property:ro.vendor.use_data_netmgrd=false
