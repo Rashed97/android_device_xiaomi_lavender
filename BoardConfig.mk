@@ -258,10 +258,6 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
-# Vendor init
-TARGET_INIT_VENDOR_LIB := libinit_lavender
-TARGET_RECOVERY_DEVICE_MODULES := libinit_lavender
-
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
