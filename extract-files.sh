@@ -34,7 +34,7 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-CLEAN_VENDOR=false
+CLEAN_VENDOR=true
 
 while [ "$1" != "" ]; do
     case $1 in
@@ -60,6 +60,10 @@ setup_vendor "$DEVICE" "$VENDOR" "$MK_ROOT" false "$CLEAN_VENDOR"
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files-camera.txt "$SRC" "$SECTION"
 
+"$MY_DIR"/setup-makefiles.sh
+
+if [ "$CLEAN_VENDOR" = true ] ; then
+
 GOODIX="$MK_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib64/libgf_ca.so
 
 sed -i "s|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g" $GOODIX
@@ -70,4 +74,4 @@ patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "$BLOB_ROOT"/v
 patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "$BLOB_ROOT"/vendor/lib64/libmlipay.so
 patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "$BLOB_ROOT"/vendor/lib64/libmlipay@1.1.so
 
-"$MY_DIR"/setup-makefiles.sh
+fi
