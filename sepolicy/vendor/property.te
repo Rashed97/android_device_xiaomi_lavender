@@ -1,2 +1,6 @@
 # Mlipay
 type ifaa_prop, property_type;
+
+# Vendor split
+type vendor_device_prop, property_type;
+type public_vendor_system_prop, property_type;
