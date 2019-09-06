@@ -789,12 +789,6 @@ service adswitch /vendor/bin/adswitch
     disabled
     oneshot
 
-service checknv /system/bin/checknv
-    class late_start
-    user root
-    oneshot
-    seclabel u:r:vendor_init:s0
-
 service nv_mac /vendor/bin/nv_mac
 	class late_start
 	user system
