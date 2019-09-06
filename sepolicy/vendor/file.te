@@ -9,6 +9,7 @@ type proc_touchscreen_gesture, proc_type, fs_type;
 # Fingerprint
 type fingerprintd_device, file_type, dev_type;
 type fingerprint_persist_file, file_type;
+type fingerprint_vendor_file, file_type, data_file_type;
 type sysfs_fpc_dev, sysfs_type, fs_type;
 
 # Keylayout
