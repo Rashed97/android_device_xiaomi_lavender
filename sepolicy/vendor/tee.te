@@ -1,2 +1,4 @@
 #============= tee ==============
 allow tee fingerprintd_data_file:file { read write };
+allow tee fingerprint_vendor_file:dir rw_dir_perms;
+allow tee fingerprint_vendor_file:file create_file_perms;

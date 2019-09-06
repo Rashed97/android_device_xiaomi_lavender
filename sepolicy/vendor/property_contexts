@@ -4,7 +4,9 @@ persist.camera.gyro.disable                                   u:object_r:vendor_
 
 # Fingerprint
 persist.sys.fp.                                               u:object_r:fingerprintd_prop:s0
+persist.vendor.sys.fp                                         u:object_r:fingerprintd_prop:s0
 ro.boot.fp.                                                   u:object_r:fingerprintd_prop:s0
+ro.boot.fpsensor                                              u:object_r:fingerprintd_prop:s0
 sys.fp.                                                       u:object_r:fingerprintd_prop:s0
 
 # Mlipay
@@ -13,7 +15,6 @@ persist.sys.ifaa                    u:object_r:ifaa_prop:s0
 # Vendor split
 gpu.stats.debug.level	   u:object_r:vendor_default_prop:s0
 persist.console.silent.config u:object_r:vendor_default_prop:s0
-ro.boot.fpsensor           u:object_r:vendor_default_prop:s0
 ro.build.software.version  u:object_r:vendor_default_prop:s0
 ro.miui.ui.version.code    u:object_r:vendor_default_prop:s0
 ro.product.mod_device      u:object_r:vendor_default_prop:s0

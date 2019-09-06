@@ -24,6 +24,6 @@ allow hal_fingerprint_default fpc_extension_service:hwservice_manager { add find
 allow hal_fingerprint_default goodix_extension_service:hwservice_manager { add find };
 
 allow hal_fingerprint_default fingerprint_vendor_file:file rw_file_perms;
+allow hal_fingerprint_default fingerprint_vendor_file:dir rw_dir_perms;
 
-set_prop(hal_fingerprint_default fingerprintd_prop);
-
+set_prop(hal_fingerprint_default, fingerprintd_prop);

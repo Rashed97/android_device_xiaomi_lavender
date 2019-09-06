@@ -24,10 +24,14 @@
 /data/misc/gf_data(/.*)?                                      u:object_r:fingerprintd_data_file:s0
 /data/gf_data(/.*)?                                           u:object_r:fingerprintd_data_file:s0
 /data/misc/goodix(/.*)?                                       u:object_r:fingerprintd_data_file:s0
+/data/vendor/goodix(/.*)?                                     u:object_r:fingerprint_vendor_file:s0
 /persist/fpc(/.*)?                                            u:object_r:fingerprint_persist_file:s0
 /sys/devices/soc/soc:fpc1020.*/irq                            u:object_r:sysfs_fpc_dev:s0
 /sys/devices/soc/soc:fpc1020.*/hw_reset                       u:object_r:sysfs_fpc_dev:s0
 /sys/devices/soc/soc:fpc1020.*/wakeup_enable                  u:object_r:sysfs_fpc_dev:s0
+
+# Display
+/sys/devices/virtual/graphics/fb([0-3])+/pa                   u:object_r:sysfs_graphics:s0
 
 # Mlipay
 /(vendor|system/vendor)/bin/mlipayd@1.1		u:object_r:hal_mlipay_default_exec:s0
@@ -51,3 +55,6 @@
 /(vendor|system/vendor)/bin/init\.qcom\.devstart\.sh    u:object_r:init-qcom-devstart-sh_exec:s0
 
 /sys/kernel/boot_cdsp(/.*)?                             u:object_r:sysfs_cdsp:s0
+
+# RTC
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-00/800f000\.qcom,spmi:qcom,pm660@0:qcom,pm660_rtc/rtc/rtc0/hctosys             u:object_r:sysfs_rtc:s0
